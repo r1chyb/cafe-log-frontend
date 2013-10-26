@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Cafe</th>
+            <th>Date Visited</th>
+            <th>Ratings</th>
+            <th><a href="#/new">[New]</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="visit in visits">
+            <td>{{visit.name}}</td>
+            <td>{{visit.visited}}</td>
+            <td>{{visit.beverage_rating}} / {{visit.service_rating}} / {{visit.ambience_rating}}</td>
+            <td>
+                <a href="#/edit/{{$index}}">[Edit]</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

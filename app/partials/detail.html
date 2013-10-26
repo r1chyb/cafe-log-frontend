@@ -1,0 +1,79 @@
+<form name="visitForm" ng-submit="save()">
+    <div>
+        <label for="name">Cafe Name:</label>
+        <input type="text" name="name" required ng-model="visit.name"></input>
+        <span ng-show="visitForm.name.$error.required">Required</span>
+    </div>
+    <div>
+        <label for="visited">Date Visited:</label>
+        <input type="date" name="visited" ng-model="visit.visited" required></input>
+        <span ng-show="visitForm.visited.$error.required">Required</span>
+    </div>
+    <div>
+        <label for="accompanied_by">Accompanied by:</label>
+        <input type="text" ng-model="visit.accompanied_by"></input>
+    </div>
+    <fieldset>
+        <div>
+            <label for="machine">Espresso Machine:</label>
+            <input type="text" ng-model="visit.machine"></input>
+        </div>
+        <div>
+            <label for="grinder">Grinder:</label>
+            <input type="text" ng-model="visit.grinder"></input>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div>
+            <label for="beverage">Beverage ordered:</label>
+            <input type="text" name="beverage" ng-model="visit.beverage" required></input>
+            <span ng-show="visitForm.beverage.$error.required">Required</span>
+        </div>
+        <div>
+            <label for="roaster">Roaster:</label>
+            <input type="text" ng-model="visit.roaster"></input>
+        </div>
+        <div>
+            <label for="blend">Blend:</label>
+            <input type="text" ng-model="visit.blend" />
+        </div>
+        <div>
+            <label for="tasting_notes">Tasting Notes:</label>
+            <textarea ng-model="visit.tasting_notes"></textarea>
+        </div>
+        <div>
+            <label for="beverage_rating">Beverage Rating:</label>
+            1<input type="range" min="1" max="5" name="beverage_rating" ng-model="visit.beverage_rating" required></input>5
+            <span ng-show="visitForm.beverage_rating.$error.required">Required</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div>
+            <label for="service_notes">Service Notes:</label>
+            <textarea ng-model="visit.service_notes"></textarea>
+        </div>
+        <div>
+            <label for="service_rating">Service Rating:</label>
+            1<input type="range" min="1" max="5" name="service_rating" ng-model="visit.service_rating" required></input>5
+            <span ng-show="visitForm.service_rating.$error.required">Required</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div>
+            <label for="ambience_notes">Ambience Notes:</label>
+            <textarea ng-model="visit.ambience_notes"></textarea>
+        </div>
+        <div>
+            <label for="ambience_rating">Ambience Rating:</label>
+            1<input type="range" name="ambience_rating" ng-model="visit.ambience_rating" min="1" max="5" required></input>5
+            <span ng-show="visitForm.ambience_rating.$error.required">Required</span>
+        </div>
+    </fieldset>
+    <div>
+        <label for="other_notes">Notes:</label>
+        <textarea ng-model="visit.other_notes"></textarea>
+    </div>
+    <button>Add visit</button>
+    <button type="reset">Clear</button>
+</form>
+<p>{{visit}}</p>
