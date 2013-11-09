@@ -1,7 +1,8 @@
 module.exports = (grunt) ->
+  require('load-grunt-tasks') grunt
+
   # Project configuration
   grunt.initConfig
-    pkg: grunt.file.readJSON 'package.json'
     connect:
       options:
         port: 9000
@@ -13,8 +14,6 @@ module.exports = (grunt) ->
           base: 'app'
           keepalive: true
   # Default task(s).
-
-  grunt.loadNpmTasks 'grunt-contrib-connect'
 
   grunt.registerTask 'server', (target) ->
     grunt.task.run ['connect:keepalive']
